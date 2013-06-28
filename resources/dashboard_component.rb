@@ -21,7 +21,7 @@ hash_attrs.each do |attr_hash|
   attribute attr_hash, :kind_of => String, :required => false
 end
 
-string_attrs = %w(title vtitle description major_grid_line_color minor_grid_line_color from until)
+string_attrs = %w(title vtitle description major_grid_line_color minor_grid_line_color from until logbase graphtype)
 string_attrs.each do |attr_string|
   attribute attr_string, :kind_of => String, :required => false
 end
@@ -37,7 +37,7 @@ bool_attrs.each do |attr_bool|
 end
 
 attribute :area, :equal_to => [:all, :first, :none, :stacked], :required => false
-attribute :linemode, :equal_to => %w(slope staircase), :required => false
+attribute :linemode, :equal_to => %w(slope staircase connected), :required => false
 
 ::GDASH_RESOURCE_ATTRIBS = string_attrs + int_attrs + bool_attrs + hash_attrs + %w(area linemode)
 
